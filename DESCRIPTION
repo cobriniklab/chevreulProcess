@@ -23,7 +23,7 @@ Depends:
 Imports:
     batchelor,
     bluster,
-    chevreuldata,
+    chevreuldata (>= 0.99.0),
     circlize,
     cluster,
     DBI,
@@ -73,3 +73,5 @@ biocViews:
     Transcription, SingleCell, Transcriptomics, Normalization, Preprocessing, 
     QualityControl, DimensionReduction, DataImport
 Config/testthat/edition: 3
+Remotes:  
+    https://github.com/cobriniklab/chevreuldata
