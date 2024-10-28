@@ -7,7 +7,7 @@
 integration_workflow(
   batches,
   excluded_cells = NULL,
-  resolution = seq(0.2, 2, by = 0.2),
+  resolution = seq(0.2, 1, by = 0.2),
   experiment_name = "default_experiment",
   organism = "human",
   ...

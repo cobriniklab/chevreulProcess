@@ -6,12 +6,12 @@
 \usage{
 sce_integrate(
   sce_list,
-  resolution = seq(0.2, 2, by = 0.2),
+  resolution = seq(0.2, 1, by = 0.2),
   suffix = "",
   organism = "human",
   annotate_cell_cycle = FALSE,
   annotate_percent_mito = FALSE,
-  reduction = "PCA",
+  reduction = "corrected",
   ...
 )
 }
@@ -43,4 +43,12 @@ Run batch correction, followed by:
 \item clustering with resolution 0.2 to 2.0 in increments of 0.2
 \item saving to <proj_dir>/output/sce/\if{html}{\out{<feature>}}\emph{sce}\if{html}{\out{<suffix>}}.rds
 }
+}
+\examples{
+data("small_example_dataset")
+small_example_dataset |> 
+splitByCol("Mutation_Status") |> 
+sce_integrate()
+
+
 }

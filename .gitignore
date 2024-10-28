@@ -28,3 +28,4 @@ rsconnect
 /doc/
 /Meta/
 docs
+check_version_and_license.R

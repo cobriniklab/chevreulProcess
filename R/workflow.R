@@ -15,7 +15,7 @@
 #'
 #' @return an integrated SingleCellExperiment object
 integration_workflow <- function(batches, excluded_cells = NULL,
-                                 resolution = seq(0.2, 2.0, by = 0.2),
+                                 resolution = seq(0.2, 1, by = 0.2),
                                  experiment_name = "default_experiment",
                                  organism = "human", ...) {
     organisms <- map(batches, list("meta.data", "organism", 1))
@@ -58,7 +58,7 @@ integration_workflow <- function(batches, excluded_cells = NULL,
 #'
 #' @return a clustered SingleCellExperiment object
 clustering_workflow <- function(object, excluded_cells,
-                                resolution = seq(0.2, 2.0, by = 0.2),
+                                resolution = seq(0.2, 1, by = 0.2),
                                 organism = "human",
                                 experiment_name = "default_experiment", ...) {
     object <- sce_process(object, resolution = resolution, ...)

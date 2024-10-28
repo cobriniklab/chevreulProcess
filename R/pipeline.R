@@ -14,9 +14,16 @@
 #' @param ... extra args passed to integrate
 #' @param annotate_percent_mito logical scalar
 #' whether to annotate mitochondrial percentage
+#' @export
+#' @examples
+#' data("small_example_dataset")
+#' small_example_dataset |> 
+#' splitByCol("Mutation_Status") |> 
+#' sce_integrate()
+#' 
 #'
 #' @return an integrated SingleCellExperiment object
-sce_integrate <- function(sce_list, resolution = seq(0.2, 2.0, by = 0.2), suffix = "", organism = "human", annotate_cell_cycle = FALSE, annotate_percent_mito = FALSE, reduction = "PCA", ...) {
+sce_integrate <- function(sce_list, resolution = seq(0.2, 1, by = 0.2), suffix = "", organism = "human", annotate_cell_cycle = FALSE, annotate_percent_mito = FALSE, reduction = "corrected", ...) {
     experiment_names <- names(sce_list)
 
     organisms <- case_when(
@@ -30,13 +37,13 @@ sce_integrate <- function(sce_list, resolution = seq(0.2, 2.0, by = 0.2), suffix
 
     integrated_sce <- integrate(sce_list, organism = organism, ...)
 
-    integrated_sce <- sce_reduce_dimensions(integrated_sce, ...)
-
+  
+    integrated_sce <- runTSNE(x = integrated_sce, dimred = "corrected")
+    integrated_sce <- runUMAP(x = integrated_sce, dimred = "corrected")
     # cluster merged objects
     integrated_sce <- sce_cluster(integrated_sce, resolution = resolution, algorithm = algorithm, reduction = reduction, ...)
 
-    experiment <- "gene"
-    integrated_sce <- find_all_markers(integrated_sce, experiment = experiment)
+    integrated_sce <- find_all_markers(integrated_sce, experiment = "gene")
 
     #   enriched_sce <- tryCatch(getEnrichedPathways(integrated_sce), error = function(e) e)
     #   enrichr_available <- !any(class(enriched_sce) == "error")

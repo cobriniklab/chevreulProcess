@@ -7,7 +7,7 @@
 clustering_workflow(
   object,
   excluded_cells,
-  resolution = seq(0.2, 2, by = 0.2),
+  resolution = seq(0.2, 1, by = 0.2),
   organism = "human",
   experiment_name = "default_experiment",
   ...

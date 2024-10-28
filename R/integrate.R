@@ -67,7 +67,7 @@ integrate <- function(sce_list, organism = "human", ...) {
     geneCorrected <- correctExperiments(sce_list)
     mainExpName(geneCorrected) <- "integrated"
 
-    geneMerged <- correctExperiments(sce_list)
+    geneMerged <- correctExperiments(sce_list, PARAM = NoCorrectParam())
     altExp(geneCorrected, "gene") <- geneMerged
 
     alt_exp_names <- map(sce_list, altExpNames)

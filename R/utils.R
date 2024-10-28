@@ -60,7 +60,7 @@ record_experiment_data <- function(object,
         variables_to_regress_out = "nCount_RNA",
         number_PCs = 30,
         tSNE_perplexity = 30,
-        cluster_resolution = seq(0.2, 2.0, by = 0.2)
+        cluster_resolution = seq(0.2, 1, by = 0.2)
     )
     experiment$filtering <- list(
         UMI_min = 50,
