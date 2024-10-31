@@ -25,11 +25,11 @@ document_annotable <- function(x, table, type) {
   type <- match.arg(type, c("gene", "tx2gene"))
   template.path <- system.file("templates",
                                paste0(type, ".R"),
-                               package = "chevreul",
+                               package = "chevreulProcess",
                                mustWork = TRUE)
 
   table.path <- system.file("data", paste0(table, ".rda"),
-                            package = "chevreul")
+                            package = "chevreulProcess")
   stopifnot(file.exists(table.path))
 
   file.path <- file.path("R", paste0(table, ".R"))

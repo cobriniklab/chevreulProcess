@@ -23,8 +23,8 @@ sce_de <- function(object, cluster1, cluster2, resolution = 0.2,
                           tests = c("t", "wilcox", "bimod")) {
 
     data_env <- new.env(parent = emptyenv())
-    data("grch38", envir = data_env, package = "chevreul")
-    data("grch38_tx2gene", envir = data_env, package = "chevreul")
+    data("grch38", envir = data_env, package = "chevreulProcess")
+    data("grch38_tx2gene", envir = data_env, package = "chevreulProcess")
     grch38 <- data_env[["grch38"]]
     grch38_tx2gene <- data_env[["grch38_tx2gene"]]
 
