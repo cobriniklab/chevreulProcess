@@ -80,6 +80,7 @@
 #' @importFrom utils data
 #' @importFrom utils head
 #' @importFrom utils packageVersion
+#' @importFrom utils read.csv
 #' @importFrom utils sessionInfo
 #' @importFrom megadepth bam_to_bigwig
 ## usethis namespace: end
