@@ -135,8 +135,6 @@ find_all_markers <- function(object,
                              group_by = NULL, experiment = "gene", ...) {
     if (is.null(group_by)) {
         meta_cols <- colnames(get_colData(object))
-        # resolutions <- meta_cols[grepl(paste0(experiment, "_snn_res."), 
-        #                                meta_cols)]
         cluster_index <- grepl(paste0(experiment, "_snn_res."), meta_cols)
         if (!any(cluster_index)) {
             warning("no clusters found in metadata. runnings sce_cluster")

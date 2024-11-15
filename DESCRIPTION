@@ -1,7 +1,7 @@
 Type: Package
 Package: chevreulProcess
 Title: Tools for managing SingleCellExperiment objects as projects
-Version: 0.99.6
+Version: 0.99.7
 Authors@R: c(
     person("Kevin", "Stachelek", , "kevin.stachelek@gmail.com", 
     role = c("aut", "cre"), comment = c(ORCID = "0000-0003-2085-695X")),
@@ -28,23 +28,16 @@ Imports:
     cluster,
     DBI,
     dplyr,
-    EnhancedVolcano,
-    EnrichmentBrowser,
     EnsDb.Hsapiens.v86,
     EnsDb.Mmusculus.v79,
     ensembldb,
-    forcats,
     fs,
-    future,
     GenomicFeatures,
     glue,
-    harmony,
     megadepth,
     methods,
     purrr,
     rappdirs,
-    readr,
-    rlang,
     RSQLite,
     S4Vectors,
     scran,
