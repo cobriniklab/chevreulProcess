@@ -19,9 +19,3 @@ cell metadata column containing mitochondrial percentage
 Add a Percentage of Mitochondrial Read Count Categorical Variable to the
 Object (based on nCount_RNA)
 }
-\examples{
-
-data(small_example_dataset)
-add_percent_mito(small_example_dataset)
-
-}

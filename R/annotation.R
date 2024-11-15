@@ -61,11 +61,6 @@ transcripts_to_genes <- function(transcripts) {
 #'
 #' @return a single cell object with
 #' cell metadata column containing mitochondrial percentage
-#' @export
-#' @examples
-#' 
-#' data(small_example_dataset)
-#' add_percent_mito(small_example_dataset)
 #'
 add_percent_mito <- function(object, experiment = "gene") {
     is.mito <- grepl("^MT-*", rownames(object))

@@ -98,11 +98,6 @@ sce_de <- function(object, cluster1, cluster2, resolution = 0.2,
 #' @param legacy_settings Use legacy settings
 #' @param ... extra args passed to scaling functions
 #' @return a preprocessed SingleCellExperiment object
-#' @export
-#' @examples
-#' data("small_example_dataset")
-#' sce_preprocess(small_example_dataset)
-#'
 sce_preprocess <- 
     function(object, scale = TRUE, normalize = TRUE, 
                               features = NULL, legacy_settings = FALSE, ...) {

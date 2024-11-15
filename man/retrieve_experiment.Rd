@@ -17,9 +17,3 @@ Main or alt experiment in a SingleCellExperiment object
 \description{
 Retrieve Assay
 }
-\examples{
-
-data(small_example_dataset)
-mainExpName(small_example_dataset) <- "gene"
-retrieve_experiment(small_example_dataset, experiment = "gene")
-}
