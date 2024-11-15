@@ -111,7 +111,9 @@ get_feature_types <- function(object) {
 #' set_feature_type(small_example_dataset, "transcript")
 set_feature_type <- function(object, feature_type) {
     if (feature_type %in% altExpNames(object)) {
-        object <- swapAltExp(object, feature_type, saved = mainExpName(object), withColData = TRUE)
+        object <- swapAltExp(object, feature_type, 
+                             saved = mainExpName(object), 
+                             withColData = TRUE)
     }
     return(object)
 }

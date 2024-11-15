@@ -26,7 +26,10 @@ regress_cell_cycle <- function(object) {
 
         original_experiment <- mainExpName(object)
 
-        resolutions <- str_extract(colnames(colData(object))[grepl(glue("{original_experiment}_snn_res."), colnames(colData(object)))], "[0-9].*$")
+        res_names <- grepl(glue("{original_experiment}_snn_res."), 
+                           colnames(colData(object)))
+        resolutions <- 
+            str_extract(colnames(colData(object))[res_names], "[0-9].*$")
         object <- runTSNE(x = object, dimred = "PCA", n_dimred = seq(30))
         object <- runUMAP(x = object, dimred = "PCA", n_dimred = seq(30))
         object <- sce_cluster(object, resolution = resolutions)

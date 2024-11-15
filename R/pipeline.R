@@ -17,14 +17,18 @@
 #' whether to annotate mitochondrial percentage
 #' @export
 #' @examples
-#' data("small_example_dataset")
+#' \donttest{data("small_example_dataset")
 #' small_example_dataset |> 
 #' splitByCol("Mutation_Status") |> 
-#' sce_integrate(resolution = 0.2, batch_correct = FALSE)
+#' sce_integrate(resolution = 0.2, batch_correct = FALSE)}
 #' 
 #'
 #' @return an integrated SingleCellExperiment object
-sce_integrate <- function(sce_list, resolution = seq(0.2, 1, by = 0.2), suffix = "", organism = "human", batch_correct = TRUE, annotate_cell_cycle = FALSE, annotate_percent_mito = FALSE, reduction = "corrected", ...) {
+sce_integrate <- function(sce_list, resolution = seq(0.2, 1, by = 0.2), 
+                          suffix = "", organism = "human", 
+                          batch_correct = TRUE, annotate_cell_cycle = FALSE, 
+                          annotate_percent_mito = FALSE, 
+                          reduction = "corrected", ...) {
     experiment_names <- names(sce_list)
 
     organisms <- case_when(
@@ -43,7 +47,9 @@ sce_integrate <- function(sce_list, resolution = seq(0.2, 1, by = 0.2), suffix =
     integrated_sce <- runUMAP(x = integrated_sce, dimred = "corrected")
     
     # cluster merged objects
-    integrated_sce <- sce_cluster(integrated_sce, resolution = resolution, algorithm = algorithm, reduction = reduction, ...)
+    integrated_sce <- sce_cluster(integrated_sce, resolution = resolution, 
+                                  algorithm = algorithm, 
+                                  reduction = reduction, ...)
     integrated_sce <- find_all_markers(integrated_sce, experiment = "gene")
 
     # annotate cell cycle scoring to objects
@@ -77,21 +83,25 @@ sce_integrate <- function(sce_list, resolution = seq(0.2, 1, by = 0.2), suffix =
 #' @return a processed SingleCellExperiment object
 #' @export
 #' @examples
-#' data(small_example_dataset)
-#' sce_process(small_example_dataset, process = FALSE)
+#' \donttest{data(small_example_dataset)
+#' sce_process(small_example_dataset, process = FALSE)}
 #' 
-sce_process <- function(object, experiment = "gene", resolution = 0.6, reduction = "PCA", organism = "human", process = TRUE, ...) {
+sce_process <- function(object, experiment = "gene", resolution = 0.6, 
+                        reduction = "PCA", organism = "human", 
+                        process = TRUE, ...) {
     
     if(!process) return(object)
     
     object <- sce_preprocess(object, scale = TRUE, ...)
     for (experiment in altExpNames(object)) {
-        altExp(object, experiment) <- sce_preprocess(altExp(object, experiment), scale = TRUE, ...)
+        altExp(object, experiment) <- 
+            sce_preprocess(altExp(object, experiment), scale = TRUE, ...)
     }
     
     object <- sce_reduce_dimensions(object, ...)
 
-    object <- sce_cluster(object = object, resolution = resolution, reduction = reduction, ...)
+    object <- sce_cluster(object = object, resolution = resolution, 
+                          reduction = reduction, ...)
 
     object <- find_all_markers(object, experiment = "gene")
 
