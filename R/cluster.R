@@ -167,12 +167,6 @@ find_all_markers <- function(object,
 #' @param p_val_cutoff p value cut-off, Default value is "0.5"
 #'
 #' @return a SingleCellExperiment object with marker genes
-#' @export
-#' @examples
-#' data("small_example_dataset")
-#' small_example_dataset <- 
-#' find_all_markers(small_example_dataset, "gene_snn_res.1")
-#' stash_marker_features(small_example_dataset, "gene_snn_res.1")
 stash_marker_features <- function(object, group_by, experiment = "gene", 
                                   top_n = 200, p_val_cutoff = 0.5) {
     message("stashing markers for ", group_by)

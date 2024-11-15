@@ -30,7 +30,6 @@
 #' @importFrom dplyr summarize
 #' @importFrom dplyr top_n
 #' @importFrom EnsDb.Hsapiens.v86 EnsDb.Hsapiens.v86
-#' @importFrom EnsDb.Mmusculus.v79 EnsDb.Mmusculus.v79
 #' @importFrom ensembldb transcripts
 #' @importFrom fs dir_ls
 #' @importFrom fs path
@@ -52,7 +51,6 @@
 #' @importFrom purrr map_lgl
 #' @importFrom purrr pmap
 #' @importFrom purrr reduce
-#' @importFrom rappdirs user_cache_dir
 #' @importFrom RSQLite SQLite
 #' @importFrom S4Vectors metadata
 #' @importFrom scater runPCA
@@ -85,7 +83,6 @@
 #' @importFrom megadepth bam_to_bigwig
 ## usethis namespace: end
 #' @import SingleCellExperiment
-#' @import SummarizedExperiment
 #' @import dplyr
 #' @import stringr
 #' @import tidyr

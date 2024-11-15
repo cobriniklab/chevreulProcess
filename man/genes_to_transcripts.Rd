@@ -4,12 +4,10 @@
 \alias{genes_to_transcripts}
 \title{Gene Symbols to Ensembl Transcript Ids}
 \usage{
-genes_to_transcripts(symbols, organism = "human")
+genes_to_transcripts(symbols)
 }
 \arguments{
 \item{symbols}{character vector of gene symbols}
-
-\item{organism}{mouse or human}
 }
 \value{
 a vector of transcripts

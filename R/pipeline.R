@@ -149,20 +149,3 @@ sce_reduce_dimensions <- function(object, experiment = "gene", ...) {
 
     return(object)
 }
-
-#' Give a new project name to a SingleCellExperiment object
-#'
-#' @param object A SingleCellExperiment object
-#' @param new_name New name to assign
-#'
-#' @return a renamed SingleCellExperiment object
-#' @export
-#' @examples
-#' 
-#' 
-#' data(small_example_dataset)
-#' rename_sce(small_example_dataset, "new_name")
-rename_sce <- function(object, new_name) {
-    metadata(object)["project.name"] <- new_name
-    return(object)
-}
