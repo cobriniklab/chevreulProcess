@@ -74,7 +74,7 @@ record_experiment_data <- function(object,
         experiment$SingleCellExperiment_version <- objectVersion(object)
     }
 
-    experiment$chevreul_version <- packageVersion("chevreul")
+    experiment$chevreul_version <- packageVersion("chevreulProcess")
 
     metadata(object)[["experiment"]] <- experiment
 

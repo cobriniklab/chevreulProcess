@@ -1,5 +1,5 @@
 ---
-title: "Chevreul"
+title: "chevreulProcess"
 author: 
   - name: Kevin Stachelek
     affiliation:
@@ -17,7 +17,7 @@ output:
     toc_depth: 2
     code_folding: show
 date: "`r doc_date()`"
-package: "`r pkg_ver('chevreul')`"
+package: "`r pkg_ver('chevreulProcess')`"
 vignette: >
   %\VignetteIndexEntry{Preprocessing}
   %\VignetteEngine{knitr::rmarkdown}

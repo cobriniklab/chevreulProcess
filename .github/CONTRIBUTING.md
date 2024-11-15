@@ -1,4 +1,4 @@
-# Contributing to chevreul
+# Contributing to chevreulProcess
 
 This outlines how to propose a change to chevreul.
 For a detailed discussion on contributing to this and other tidyverse packages, please see the [development contributing guide](https://rstd.io/tidy-contrib) and our [code review principles](https://code-review.tidyverse.org/).
