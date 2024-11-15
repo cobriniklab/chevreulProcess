@@ -10,6 +10,7 @@ sce_process(
   resolution = 0.6,
   reduction = "PCA",
   organism = "human",
+  process = TRUE,
   ...
 )
 }
@@ -24,6 +25,8 @@ sce_process(
 
 \item{organism}{Organism}
 
+\item{process}{whether to run dimensional reduction and clustering}
+
 \item{...}{extra parameters passed to internal functions}
 }
 \value{
@@ -35,6 +38,6 @@ for one SingleCellExperiment object.
 }
 \examples{
 data(small_example_dataset)
-sce_process(small_example_dataset)
+sce_process(small_example_dataset, process = FALSE)
 
 }

@@ -33,7 +33,6 @@ Imports:
     EnsDb.Hsapiens.v86,
     EnsDb.Mmusculus.v79,
     ensembldb,
-    ExperimentHub,
     forcats,
     fs,
     future,

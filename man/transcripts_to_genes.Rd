@@ -22,8 +22,6 @@ Convert ensembl transcript ids to hgnc gene symbols
 NRL_transcripts_hs <-
 c("ENST00000359842", "ENST00000470566", "ENST00000465764")
 
- data("grch38_tx2gene")
- data("grch38")
 transcripts_to_genes(transcripts = NRL_transcripts_hs)
 
 }
