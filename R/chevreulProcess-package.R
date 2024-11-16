@@ -81,7 +81,4 @@
 #' @importFrom megadepth bam_to_bigwig
 ## usethis namespace: end
 #' @import SingleCellExperiment
-#' @import dplyr
-#' @import stringr
-#' @import tidyr
 NULL
