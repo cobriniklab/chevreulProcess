@@ -72,6 +72,7 @@
 #' @importFrom tibble column_to_rownames
 #' @importFrom tibble enframe
 #' @importFrom tibble rownames_to_column
+#' @importFrom tibble tibble
 #' @importFrom utils capture.output
 #' @importFrom utils data
 #' @importFrom utils head

@@ -17,10 +17,10 @@
 #' whether to annotate mitochondrial percentage
 #' @export
 #' @examples
-#' \donttest{data("small_example_dataset")
-#' small_example_dataset |> 
-#' splitByCol("Mutation_Status") |> 
-#' sce_integrate(resolution = 0.2, batch_correct = FALSE)}
+#' data("tiny_sce")
+#' tiny_sce |> 
+#' splitByCol("bath") |> 
+#' sce_integrate(resolution = 0.2, batch_correct = FALSE)
 #' 
 #'
 #' @return an integrated SingleCellExperiment object
@@ -83,8 +83,8 @@ sce_integrate <- function(sce_list, resolution = seq(0.2, 1, by = 0.2),
 #' @return a processed SingleCellExperiment object
 #' @export
 #' @examples
-#' \donttest{data(small_example_dataset)
-#' sce_process(small_example_dataset, process = FALSE)}
+#' data(tiny_sce)
+#' sce_process(tiny_sce, process = FALSE)
 #' 
 sce_process <- function(object, experiment = "gene", resolution = 0.6, 
                         reduction = "PCA", organism = "human", 
