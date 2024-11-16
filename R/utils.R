@@ -4,12 +4,11 @@
 #'
 #' @param object A SingleCellExperiment object
 #' @param gene Gene of interest
-#' @param organism Organism
 #'
 #' @return transcripts constituting a 
 #' gene of interest in a SingleCellExperiment object
-get_transcripts_from_sce <- function(object, gene, organism = "human") {
-    transcripts <- genes_to_transcripts(gene, organism)
+get_transcripts_from_sce <- function(object, gene) {
+    transcripts <- genes_to_transcripts(gene)
 
     transcripts <- transcripts[transcripts %in% get_features(object, 
                                                              "transcript")]

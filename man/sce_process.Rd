@@ -37,7 +37,7 @@ This functions allows you to preprocess, cluster and reduce dimensions
 for one SingleCellExperiment object.
 }
 \examples{
-data(small_example_dataset)
-sce_process(small_example_dataset, process = FALSE)
+\donttest{data(small_example_dataset)
+sce_process(small_example_dataset, process = FALSE)}
 
 }

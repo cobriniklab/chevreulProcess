@@ -4,14 +4,12 @@
 \alias{get_transcripts_from_sce}
 \title{Get Transcripts in object}
 \usage{
-get_transcripts_from_sce(object, gene, organism = "human")
+get_transcripts_from_sce(object, gene)
 }
 \arguments{
 \item{object}{A SingleCellExperiment object}
 
 \item{gene}{Gene of interest}
-
-\item{organism}{Organism}
 }
 \value{
 transcripts constituting a

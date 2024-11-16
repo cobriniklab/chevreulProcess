@@ -48,10 +48,10 @@ Run batch correction, followed by:
 }
 }
 \examples{
-data("small_example_dataset")
+\donttest{data("small_example_dataset")
 small_example_dataset |> 
 splitByCol("Mutation_Status") |> 
-sce_integrate(resolution = 0.2, batch_correct = FALSE)
+sce_integrate(resolution = 0.2, batch_correct = FALSE)}
 
 
 }
