@@ -10,6 +10,7 @@ sce_process(
   resolution = 0.6,
   reduction = "PCA",
   organism = "human",
+  process = TRUE,
   ...
 )
 }
@@ -24,6 +25,8 @@ sce_process(
 
 \item{organism}{Organism}
 
+\item{process}{whether to run dimensional reduction and clustering}
+
 \item{...}{extra parameters passed to internal functions}
 }
 \value{
@@ -34,7 +37,7 @@ This functions allows you to preprocess, cluster and reduce dimensions
 for one SingleCellExperiment object.
 }
 \examples{
-data(small_example_dataset)
-sce_process(small_example_dataset)
+data(tiny_sce)
+sce_process(tiny_sce, process = FALSE)
 
 }

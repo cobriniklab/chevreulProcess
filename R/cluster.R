@@ -98,11 +98,6 @@ sce_de <- function(object, cluster1, cluster2, resolution = 0.2,
 #' @param legacy_settings Use legacy settings
 #' @param ... extra args passed to scaling functions
 #' @return a preprocessed SingleCellExperiment object
-#' @export
-#' @examples
-#' data("small_example_dataset")
-#' sce_preprocess(small_example_dataset)
-#'
 sce_preprocess <- 
     function(object, scale = TRUE, normalize = TRUE, 
                               features = NULL, legacy_settings = FALSE, ...) {
@@ -135,8 +130,6 @@ find_all_markers <- function(object,
                              group_by = NULL, experiment = "gene", ...) {
     if (is.null(group_by)) {
         meta_cols <- colnames(get_colData(object))
-        # resolutions <- meta_cols[grepl(paste0(experiment, "_snn_res."), 
-        #                                meta_cols)]
         cluster_index <- grepl(paste0(experiment, "_snn_res."), meta_cols)
         if (!any(cluster_index)) {
             warning("no clusters found in metadata. runnings sce_cluster")
@@ -169,12 +162,6 @@ find_all_markers <- function(object,
 #' @param p_val_cutoff p value cut-off, Default value is "0.5"
 #'
 #' @return a SingleCellExperiment object with marker genes
-#' @export
-#' @examples
-#' data("small_example_dataset")
-#' small_example_dataset <- 
-#' find_all_markers(small_example_dataset, "gene_snn_res.1")
-#' stash_marker_features(small_example_dataset, "gene_snn_res.1")
 stash_marker_features <- function(object, group_by, experiment = "gene", 
                                   top_n = 200, p_val_cutoff = 0.5) {
     message("stashing markers for ", group_by)

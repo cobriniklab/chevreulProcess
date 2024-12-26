@@ -9,6 +9,7 @@
 #' @param sce_list List of objects to be integrated
 #' @param resolution Range of resolution
 #' @param organism Default "human"
+#' @param batch_correct whether to integrate by batch correction
 #' @param annotate_cell_cycle whether to score cell cycle phases
 #' @param reduction pca, umap, or tsne
 #' @param ... extra args passed to integrate
@@ -16,14 +17,18 @@
 #' whether to annotate mitochondrial percentage
 #' @export
 #' @examples
-#' data("small_example_dataset")
-#' small_example_dataset |> 
-#' splitByCol("Mutation_Status") |> 
-#' sce_integrate()
+#' data("tiny_sce")
+#' tiny_sce |> 
+#' splitByCol("bath") |> 
+#' sce_integrate(resolution = 0.2, batch_correct = FALSE)
 #' 
 #'
 #' @return an integrated SingleCellExperiment object
-sce_integrate <- function(sce_list, resolution = seq(0.2, 1, by = 0.2), suffix = "", organism = "human", annotate_cell_cycle = FALSE, annotate_percent_mito = FALSE, reduction = "corrected", ...) {
+sce_integrate <- function(sce_list, resolution = seq(0.2, 1, by = 0.2), 
+                          suffix = "", organism = "human", 
+                          batch_correct = TRUE, annotate_cell_cycle = FALSE, 
+                          annotate_percent_mito = FALSE, 
+                          reduction = "corrected", ...) {
     experiment_names <- names(sce_list)
 
     organisms <- case_when(
@@ -35,21 +40,17 @@ sce_integrate <- function(sce_list, resolution = seq(0.2, 1, by = 0.2), suffix =
 
     organisms[is.na(organisms)] <- organism
 
+    if(!batch_correct) return(Reduce(cbind, sce_list))
+    
     integrated_sce <- integrate(sce_list, organism = organism, ...)
-
-  
     integrated_sce <- runTSNE(x = integrated_sce, dimred = "corrected")
     integrated_sce <- runUMAP(x = integrated_sce, dimred = "corrected")
+    
     # cluster merged objects
-    integrated_sce <- sce_cluster(integrated_sce, resolution = resolution, algorithm = algorithm, reduction = reduction, ...)
-
+    integrated_sce <- sce_cluster(integrated_sce, resolution = resolution, 
+                                  algorithm = algorithm, 
+                                  reduction = reduction, ...)
     integrated_sce <- find_all_markers(integrated_sce, experiment = "gene")
-
-    #   enriched_sce <- tryCatch(getEnrichedPathways(integrated_sce), error = function(e) e)
-    #   enrichr_available <- !any(class(enriched_sce) == "error")
-    #   if(enrichr_available){
-    #     integrated_sce <- enriched_sce
-    #   }
 
     # annotate cell cycle scoring to objects
     if (annotate_cell_cycle) {
@@ -60,9 +61,6 @@ sce_integrate <- function(sce_list, resolution = seq(0.2, 1, by = 0.2), suffix =
     if (annotate_percent_mito) {
         integrated_sce <- add_percent_mito(integrated_sce, ...)
     }
-
-    # annotate excluded cells
-    # integrated_sce <- annotate_excluded(integrated_sce, excluded_cells)
 
     return(integrated_sce)
 }
@@ -79,34 +77,33 @@ sce_integrate <- function(sce_list, resolution = seq(0.2, 1, by = 0.2), suffix =
 #' @param resolution Resolution for clustering cells. Default set to 0.6.
 #' @param reduction Dimensional reduction object
 #' @param organism Organism
+#' @param process whether to run dimensional reduction and clustering
 #' @param ... extra parameters passed to internal functions
 #'
 #' @return a processed SingleCellExperiment object
 #' @export
 #' @examples
-#' data(small_example_dataset)
-#' sce_process(small_example_dataset)
+#' data(tiny_sce)
+#' sce_process(tiny_sce, process = FALSE)
 #' 
-sce_process <- function(object, experiment = "gene", resolution = 0.6, reduction = "PCA", organism = "human", ...) {
+sce_process <- function(object, experiment = "gene", resolution = 0.6, 
+                        reduction = "PCA", organism = "human", 
+                        process = TRUE, ...) {
+    
+    if(!process) return(object)
+    
     object <- sce_preprocess(object, scale = TRUE, ...)
     for (experiment in altExpNames(object)) {
-        altExp(object, experiment) <- sce_preprocess(altExp(object, experiment), scale = TRUE, ...)
+        altExp(object, experiment) <- 
+            sce_preprocess(altExp(object, experiment), scale = TRUE, ...)
     }
-
-    # PCA
+    
     object <- sce_reduce_dimensions(object, ...)
 
-    object <- sce_cluster(object = object, resolution = resolution, reduction = reduction, ...)
+    object <- sce_cluster(object = object, resolution = resolution, 
+                          reduction = reduction, ...)
 
     object <- find_all_markers(object, experiment = "gene")
-
-    # if (feature == "gene"){
-    #   enriched_sce <- tryCatch(getEnrichedPathways(object), error = function(e) e)
-    #   enrichr_available <- !any(class(enriched_sce) == "error")
-    #   if(enrichr_available){
-    #     object <- enriched_sce
-    #   }
-    # }
 
     # annotate cell cycle scoring to objects
     object <- annotate_cell_cycle(object, ...)
@@ -160,22 +157,5 @@ sce_reduce_dimensions <- function(object, experiment = "gene", ...) {
         }
     }
 
-    return(object)
-}
-
-#' Give a new project name to a SingleCellExperiment object
-#'
-#' @param object A SingleCellExperiment object
-#' @param new_name New name to assign
-#'
-#' @return a renamed SingleCellExperiment object
-#' @export
-#' @examples
-#' 
-#' 
-#' data(small_example_dataset)
-#' rename_sce(small_example_dataset, "new_name")
-rename_sce <- function(object, new_name) {
-    metadata(object)["project.name"] <- new_name
     return(object)
 }

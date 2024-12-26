@@ -15,8 +15,3 @@ variable features from a SingleCellExperiment object
 \description{
 Get object metadata
 }
-\examples{
-
-data(small_example_dataset)
-get_sce_metadata(small_example_dataset)
-}

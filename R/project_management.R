@@ -9,7 +9,7 @@
 #' @return a SingleCellExperiment object
 #'
 subset_by_colData <- function(colData_path, object) {
-    upload_colData <- read_csv(colData_path, col_names = "sample_id") |>
+    upload_colData <- read.csv(colData_path, col.names = "sample_id") |>
         filter(!is.na(sample_id) & !sample_id == "sample_id") |>
         mutate(name = sample_id) |>
         column_to_rownames("sample_id") |>
@@ -36,11 +36,12 @@ load_sce_path <- function(proj_dir = getwd(), prefix = "unfiltered") {
     sce_path <- path(proj_dir, "output", "singlecellexperiment") |>
         dir_ls(regexp = sce_regex)
 
-    if (!is_empty(sce_path)) {
+    if (!length(sce_path) == 0) {
         return(sce_path)
     }
 
-    stop(sce_path, " does not exist in current working directory ", getwd(), ".",
+    stop(sce_path, " does not exist in 
+         current working directory ", getwd(), ".",
         call. = FALSE
     )
 }

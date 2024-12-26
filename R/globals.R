@@ -17,4 +17,5 @@ utils::globalVariables(c(".", "Cluster", "DefaultAssay", "FDR", "Gene.Name",
                          "transcript", "updateButton", "write_csv", "x", 
                          "x_edit", "xend", "y", "yend", "DataFrame", 
                          "gg_fill_hue", "grch38", "grch38_tx2gene", "grcm38", 
-                         "grcm38_tx2gene", "bigwig_db"))
+                         "grcm38_tx2gene", "bigwig_db", "colData<-", 
+                         "assay<-", "assays", "metadata<-"))

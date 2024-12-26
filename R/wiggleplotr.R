@@ -51,8 +51,10 @@ load_bigwigs <- function(object, bigwig_db = "~/.cache/chevreul/bw-files.db") {
                                               bigwigfiles$sample_id)] |>
         paste(collapse = ", ")
 
-    warning(paste0("Sample coverage files ", missing_bigwigs, 
-                   "(.bw) do not match samples in object (check file names)"))
+    if(length(missing_bigwigs)>0){
+        message(paste0("Sample coverage files ", missing_bigwigs, 
+                       "(.bw) do not match samples in object (check file names)"))   
+    }
 
     dbDisconnect(con)
 

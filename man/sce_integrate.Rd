@@ -9,6 +9,7 @@ sce_integrate(
   resolution = seq(0.2, 1, by = 0.2),
   suffix = "",
   organism = "human",
+  batch_correct = TRUE,
   annotate_cell_cycle = FALSE,
   annotate_percent_mito = FALSE,
   reduction = "corrected",
@@ -23,6 +24,8 @@ sce_integrate(
 \item{suffix}{a suffix to be appended to a file save in output dir}
 
 \item{organism}{Default "human"}
+
+\item{batch_correct}{whether to integrate by batch correction}
 
 \item{annotate_cell_cycle}{whether to score cell cycle phases}
 
@@ -45,10 +48,10 @@ Run batch correction, followed by:
 }
 }
 \examples{
-data("small_example_dataset")
-small_example_dataset |> 
-splitByCol("Mutation_Status") |> 
-sce_integrate()
+data("tiny_sce")
+tiny_sce |> 
+splitByCol("bath") |> 
+sce_integrate(resolution = 0.2, batch_correct = FALSE)
 
 
 }

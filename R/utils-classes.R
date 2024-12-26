@@ -40,12 +40,7 @@ set_colData <- function(object, meta) {
 #' @param object a SingleCellExperiment object
 #'
 #' @return variable features from a SingleCellExperiment object
-#' @export
 #' @importFrom S4Vectors metadata
-#' @examples
-#' 
-#' data(small_example_dataset)
-#' get_sce_metadata(small_example_dataset)
 get_sce_metadata <- function(object) {
     metadata(object)
 }
@@ -116,7 +111,9 @@ get_feature_types <- function(object) {
 #' set_feature_type(small_example_dataset, "transcript")
 set_feature_type <- function(object, feature_type) {
     if (feature_type %in% altExpNames(object)) {
-        object <- swapAltExp(object, feature_type, saved = mainExpName(object), withColData = TRUE)
+        object <- swapAltExp(object, feature_type, 
+                             saved = mainExpName(object), 
+                             withColData = TRUE)
     }
     return(object)
 }
@@ -127,13 +124,6 @@ set_feature_type <- function(object, feature_type) {
 #' @param experiment an experiment name
 #'
 #' @return Main or alt experiment in a SingleCellExperiment object
-#' @export
-#'
-#' @examples
-#' 
-#' data(small_example_dataset)
-#' mainExpName(small_example_dataset) <- "gene"
-#' retrieve_experiment(small_example_dataset, experiment = "gene")
 retrieve_experiment <- function(object, experiment) {
     if (experiment %in% mainExpName(object)) {
         return(object)
