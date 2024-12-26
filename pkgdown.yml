@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   chevreulProcess: chevreulProcess.html
-last_built: 2024-10-31T21:50Z
+last_built: 2024-12-26T20:59Z
 urls:
   reference: https://whtns.github.io/chevreulProcess/reference
   article: https://whtns.github.io/chevreulProcess/articles
