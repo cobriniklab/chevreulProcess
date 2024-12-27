@@ -11,8 +11,8 @@ Tools analyzing SingleCellExperiment objects as projects. for input into the Che
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/whtns/chevreulProcess}
-  \item \url{https://whtns.github.io/chevreulProcess/}
+  \item \url{https://github.com/cobriniklab/chevreulProcess}
+  \item \url{https://cobriniklab.github.io/chevreulProcess/}
   \item Report bugs at \url{https://github.com/cobriniklab/chevreulProcess/issues}
 }
 
