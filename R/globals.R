@@ -1,5 +1,5 @@
 utils::globalVariables(c(".", "Cluster", "DefaultAssay", "FDR", "Gene.Name", 
-                         "assay", "coverage", "group", "chevreul_sce", 
+                         "assay", "coverage", "group", 
                          "HGNC.symbol", "Idents", "MGI.symbol", "RunUMAP", 
                          "SID", "addPerCellQC", "algorithm", "bigWig", 
                          "cc.genes", "cc.genes.cyclone", "cluster", 
