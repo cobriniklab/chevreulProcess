@@ -7,8 +7,8 @@ Authors@R: c(
     role = c("aut", "cre"), comment = c(ORCID = "0000-0003-2085-695X")),
     person("Bhavana", "Bhat", , "bhavanabhat29@gmail.com", role = "aut")
     )
-Description: Tools analyzing SingleCellExperiment objects as projects. for 
-    input into the Chevreul app downstream. 
+Description: Tools for analyzing SingleCellExperiment objects as projects. for 
+    input into the chevreulShiny app downstream. 
     Includes functions for analysis of single cell RNA sequencing data. 
     Supported by NIH grants R01CA137124 and R01EY026661 to David Cobrinik.
 License: MIT + file LICENSE
