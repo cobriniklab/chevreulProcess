@@ -99,11 +99,6 @@ reduction of Raw Sequencing Data.
 ```{r, message=FALSE}
 
 library("chevreulProcess")
-
-# Load the data
-library(chevreuldata)
-chevreul_sce <- human_gene_transcript_sce()
-chevreul_sce
 ```
 
 `R` session information.
