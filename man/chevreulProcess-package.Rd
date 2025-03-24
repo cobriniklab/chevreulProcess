@@ -6,7 +6,7 @@
 \alias{chevreulProcess-package}
 \title{chevreulProcess: Tools for managing SingleCellExperiment objects as projects}
 \description{
-Tools analyzing SingleCellExperiment objects as projects. for input into the Chevreul app downstream. Includes functions for analysis of single cell RNA sequencing data. Supported by NIH grants R01CA137124 and R01EY026661 to David Cobrinik.
+Tools for analyzing SingleCellExperiment objects as projects. for input into the chevreulShiny app downstream. Includes functions for analysis of single cell RNA sequencing data. Supported by NIH grants R01CA137124 and R01EY026661 to David Cobrinik.
 }
 \seealso{
 Useful links:
