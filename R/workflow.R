@@ -55,6 +55,12 @@ integration_workflow <- function(batches, excluded_cells = NULL,
 #' @param organism Organism
 #' @param experiment_name name of the experiment
 #' @param ... extra args passed to sce_process
+#' @export
+#' @examples
+#' data("small_example_dataset")
+#' sce_clustering_workflow(small_example_dataset, experiment_name = "tiny_sce", 
+#' organism = "human")
+#' 
 #'
 #' @return a clustered SingleCellExperiment object
 sce_clustering_workflow <- function(object, excluded_cells,

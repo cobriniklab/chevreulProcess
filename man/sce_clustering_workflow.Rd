@@ -32,3 +32,10 @@ a clustered SingleCellExperiment object
 \description{
 Cluster and Reduce Dimensions of a object
 }
+\examples{
+data("tiny_sce")
+tiny_sce |> 
+sce_clustering_workflow(experiment_name = "tiny_sce", organism = "human")
+
+
+}
