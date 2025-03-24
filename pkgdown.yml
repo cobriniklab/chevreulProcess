@@ -3,7 +3,7 @@ pkgdown: 2.1.1
 pkgdown_sha: ~
 articles:
   chevreulProcess: chevreulProcess.html
-last_built: 2025-03-22T00:54Z
+last_built: 2025-03-24T21:01Z
 urls:
   reference: https://cobriniklab.github.io/chevreulProcess/reference
   article: https://cobriniklab.github.io/chevreulProcess/articles

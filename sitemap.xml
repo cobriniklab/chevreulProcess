@@ -15,7 +15,6 @@
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/build_bigwig_db.html</loc></url>
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/cc.genes.cyclone.html</loc></url>
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/chevreulProcess-package.html</loc></url>
-<url><loc>https://cobriniklab.github.io/chevreulProcess/reference/clustering_workflow.html</loc></url>
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/convert_human_sce_to_mouse.html</loc></url>
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/convert_symbols_by_species.html</loc></url>
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/create_project_db.html</loc></url>
@@ -50,6 +49,7 @@
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/save_sce.html</loc></url>
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/sce_calcn.html</loc></url>
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/sce_cluster.html</loc></url>
+<url><loc>https://cobriniklab.github.io/chevreulProcess/reference/sce_clustering_workflow.html</loc></url>
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/sce_de.html</loc></url>
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/sce_integrate.html</loc></url>
 <url><loc>https://cobriniklab.github.io/chevreulProcess/reference/sce_preprocess.html</loc></url>
