@@ -101,7 +101,7 @@ sce_de <- function(object, cluster1, cluster2, resolution = 0.2,
 sce_preprocess <- 
     function(object, scale = TRUE, normalize = TRUE, 
                               features = NULL, legacy_settings = FALSE, ...) {
-    clusters <- quickCluster(object)
+    clusters <- quickCluster(object, use.ranks = TRUE)
     object <- computeSumFactors(object, clusters = clusters)
     # summary(sizeFactors(object))
 

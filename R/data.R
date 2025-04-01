@@ -2,7 +2,7 @@
 #'
 #' created with scuttle::mockSCE
 #'
-#' @format An SCE with 200 cells and 1000 genes
+#' @format A SingleCellExperiment with 200 cells and 1000 genes
 #' @source scuttle::mockSCE
 "small_example_dataset"
 
@@ -10,7 +10,7 @@
 #'
 #' subset to only NRL from chevreuldata::human_gene_transcript_sce()
 #'
-#' @format An SCE with only expression of NRL gene and NRL transripts
+#' @format A SingleCellExperiment with only expression of NRL gene and NRL transripts
 #' @source chevreuldata::human_gene_transcript_sce()
 "tiny_sce"
 

@@ -32,7 +32,7 @@ splitByCol <- function(x, f = "batch") {
 #' @param k.filter minimum cell number for integration
 #'
 #' @return a SingleCellExperiment object
-merge_small_sces <- function(..., k.filter = 50) {
+merge_small_sces <- function(..., k.filter = 30) {
     sce_list <- list(...)
 
     # check if any singlecell objects are too small and if so merge

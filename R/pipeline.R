@@ -128,10 +128,10 @@ sce_process <- function(object, experiment = "gene", resolution = 0.6,
 sce_reduce_dimensions <- function(object, experiment = "gene", ...) {
 
     num_samples <- dim(object)[[2]]
-    if (num_samples < 50) {
+    if (num_samples < 30) {
         npcs <- num_samples - 1
     } else {
-        npcs <- 50
+        npcs <- 30
     }
     if ("gene" == experiment) {
         object <- runPCA(x = object, subset_row = getTopHVGs(stats = object), 
