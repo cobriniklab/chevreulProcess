@@ -4,7 +4,7 @@
 \alias{merge_small_sces}
 \title{Merge Small SingleCellExperiment Objects}
 \usage{
-merge_small_sces(..., k.filter = 50)
+merge_small_sces(..., k.filter = 30)
 }
 \arguments{
 \item{...}{two or more singlecell objects}

@@ -5,7 +5,7 @@
 \alias{tiny_sce}
 \title{Tiny example SingleCellExperiment}
 \format{
-An SCE with only expression of NRL gene and NRL transripts
+A SingleCellExperiment with only expression of NRL gene and NRL transripts
 }
 \source{
 chevreuldata::human_gene_transcript_sce()

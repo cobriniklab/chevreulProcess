@@ -5,7 +5,7 @@
 \alias{small_example_dataset}
 \title{Small example SingleCellExperiment}
 \format{
-An SCE with 200 cells and 1000 genes
+A SingleCellExperiment with 200 cells and 1000 genes
 }
 \source{
 scuttle::mockSCE

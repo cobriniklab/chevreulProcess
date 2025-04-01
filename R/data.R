@@ -40,3 +40,11 @@
 #' }
 #' @source cyclone
 "cc.genes.cyclone"
+
+#' Medium example SingleCellExperiment
+#'
+#' subset 200 genes from chevreuldata::human_gene_transcript_sce()
+#'
+#' @format A SingleCellExperiment with only 200 genes
+#' @source chevreuldata::human_gene_transcript_sce()
+"medium_example_dataset"
