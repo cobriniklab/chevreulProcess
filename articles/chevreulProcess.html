@@ -66,7 +66,7 @@ Bhat</h4>
 California<br><a class="author_email" href="mailto:#"></a><a href="mailto:bbhat@usc.edu" class="email">bbhat@usc.edu</a>
       </address>
                   
-            <h4 data-toc-skip class="date">1 April 2025</h4>
+            <h4 data-toc-skip class="date">5 June 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/cobriniklab/chevreulProcess/blob/master/vignettes/chevreulProcess.Rmd" class="external-link"><code>vignettes/chevreulProcess.Rmd</code></a></small>
       <div class="d-none name"><code>chevreulProcess.Rmd</code></div>
@@ -81,10 +81,10 @@ California<br><a class="author_email" href="mailto:#"></a><a href="mailto:bbhat@
 <h3 id="install-chevreulprocess">Install <code>chevreulProcess</code><a class="anchor" aria-label="anchor" href="#install-chevreulprocess"></a>
 </h3>
 <p><code>R</code> is an open-source statistical environment which can be
-easily modified to enhance its functionality via packages. <em><a href="https://bioconductor.org/packages/3.20/chevreulProcess" class="external-link">chevreulProcess</a></em>
+easily modified to enhance its functionality via packages. <em><a href="https://bioconductor.org/packages/3.21/chevreulProcess" class="external-link">chevreulProcess</a></em>
 is a <code>R</code> package available via the <a href="http://bioconductor.org" class="external-link">Bioconductor</a> repository for packages.
 <code>R</code> can be installed on any operating system from <a href="https://cran.r-project.org/" class="external-link">CRAN</a> after which you can install
-<em><a href="https://bioconductor.org/packages/3.20/chevreulProcess" class="external-link">chevreulProcess</a></em>
+<em><a href="https://bioconductor.org/packages/3.21/chevreulProcess" class="external-link">chevreulProcess</a></em>
 by using the following commands in your <code>R</code> session:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/ns-load.html" class="external-link">requireNamespace</a></span><span class="op">(</span><span class="st">"BiocManager"</span>, quietly <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
@@ -96,12 +96,12 @@ by using the following commands in your <code>R</code> session:</p>
 <div class="section level3">
 <h3 id="required-knowledge">Required knowledge<a class="anchor" aria-label="anchor" href="#required-knowledge"></a>
 </h3>
-<p>The <em><a href="https://bioconductor.org/packages/3.20/chevreulProcess" class="external-link">chevreulProcess</a></em>
+<p>The <em><a href="https://bioconductor.org/packages/3.21/chevreulProcess" class="external-link">chevreulProcess</a></em>
 package is designed for single-cell RNA sequencing data. The functions
 included within this package are derived from other packages that have
 implemented the infrastructure needed for RNA-seq data processing and
 analysis. Packages that have been instrumental in the development of
-<em><a href="https://bioconductor.org/packages/3.20/chevreulProcess" class="external-link">chevreulProcess</a></em>
+<em><a href="https://bioconductor.org/packages/3.21/chevreulProcess" class="external-link">chevreulProcess</a></em>
 include, <code>Biocpkg("SummarizedExperiment")</code> and
 <code>Biocpkg("scater")</code>.</p>
 </div>
@@ -123,7 +123,7 @@ preprocess, cluster, visualize, and perform other analyses on scRNA-seq
 data. It also contains a shiny app for easy visualization and analysis
 of scRNA data.</p>
 <p><code>chvereul</code> uses SingelCellExperiment (SCE) object type
-(from <em><a href="https://bioconductor.org/packages/3.20/SingleCellExperiment" class="external-link">SingleCellExperiment</a></em>)
+(from <em><a href="https://bioconductor.org/packages/3.21/SingleCellExperiment" class="external-link">SingleCellExperiment</a></em>)
 to store expression and other metadata from single-cell experiments.</p>
 <p>This package features functions capable of:</p>
 <ul>
@@ -137,7 +137,7 @@ reduction of Raw Sequencing Data.</li>
 <code class="sourceCode R"><span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/cobriniklab/chevreulProcess" class="external-link">"chevreulProcess"</a></span><span class="op">)</span></span></code></pre></div>
 <p><code>R</code> session information.</p>
-<pre><code><span><span class="co">#&gt; R version 4.4.3 (2025-02-28)</span></span>
+<pre><code><span><span class="co">#&gt; R version 4.5.0 (2025-04-11)</span></span>
 <span><span class="co">#&gt; Platform: x86_64-pc-linux-gnu</span></span>
 <span><span class="co">#&gt; Running under: Ubuntu 24.04.2 LTS</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -159,77 +159,77 @@ reduction of Raw Sequencing Data.</li>
 <span><span class="co">#&gt; [8] base     </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; other attached packages:</span></span>
-<span><span class="co">#&gt;  [1] chevreulProcess_0.99.23     scater_1.34.1              </span></span>
-<span><span class="co">#&gt;  [3] ggplot2_3.5.1               scuttle_1.16.0             </span></span>
-<span><span class="co">#&gt;  [5] SingleCellExperiment_1.28.1 SummarizedExperiment_1.36.0</span></span>
-<span><span class="co">#&gt;  [7] Biobase_2.66.0              GenomicRanges_1.58.0       </span></span>
-<span><span class="co">#&gt;  [9] GenomeInfoDb_1.42.3         IRanges_2.40.1             </span></span>
-<span><span class="co">#&gt; [11] S4Vectors_0.44.0            BiocGenerics_0.52.0        </span></span>
-<span><span class="co">#&gt; [13] MatrixGenerics_1.18.1       matrixStats_1.5.0          </span></span>
-<span><span class="co">#&gt; [15] BiocStyle_2.34.0           </span></span>
+<span><span class="co">#&gt;  [1] chevreulProcess_0.99.23     scater_1.36.0              </span></span>
+<span><span class="co">#&gt;  [3] ggplot2_3.5.2               scuttle_1.18.0             </span></span>
+<span><span class="co">#&gt;  [5] SingleCellExperiment_1.30.1 SummarizedExperiment_1.38.1</span></span>
+<span><span class="co">#&gt;  [7] Biobase_2.68.0              GenomicRanges_1.60.0       </span></span>
+<span><span class="co">#&gt;  [9] GenomeInfoDb_1.44.0         IRanges_2.42.0             </span></span>
+<span><span class="co">#&gt; [11] S4Vectors_0.46.0            BiocGenerics_0.54.0        </span></span>
+<span><span class="co">#&gt; [13] generics_0.1.4              MatrixGenerics_1.20.0      </span></span>
+<span><span class="co">#&gt; [15] matrixStats_1.5.0           BiocStyle_2.36.0           </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; loaded via a namespace (and not attached):</span></span>
-<span><span class="co">#&gt;   [1] jsonlite_2.0.0            shape_1.4.6.1            </span></span>
-<span><span class="co">#&gt;   [3] magrittr_2.0.3            ggbeeswarm_0.7.2         </span></span>
-<span><span class="co">#&gt;   [5] GenomicFeatures_1.58.0    rmarkdown_2.29           </span></span>
-<span><span class="co">#&gt;   [7] GlobalOptions_0.1.2       fs_1.6.5                 </span></span>
-<span><span class="co">#&gt;   [9] BiocIO_1.16.0             zlibbioc_1.52.0          </span></span>
-<span><span class="co">#&gt;  [11] ragg_1.3.3                vctrs_0.6.5              </span></span>
-<span><span class="co">#&gt;  [13] memoise_2.0.1             Rsamtools_2.22.0         </span></span>
-<span><span class="co">#&gt;  [15] DelayedMatrixStats_1.28.1 RCurl_1.98-1.17          </span></span>
-<span><span class="co">#&gt;  [17] htmltools_0.5.8.1         S4Arrays_1.6.0           </span></span>
-<span><span class="co">#&gt;  [19] curl_6.2.2                BiocNeighbors_2.0.1      </span></span>
-<span><span class="co">#&gt;  [21] SparseArray_1.6.2         sass_0.4.9               </span></span>
-<span><span class="co">#&gt;  [23] bslib_0.9.0               desc_1.4.3               </span></span>
-<span><span class="co">#&gt;  [25] cachem_1.1.0              ResidualMatrix_1.16.0    </span></span>
-<span><span class="co">#&gt;  [27] GenomicAlignments_1.42.0  igraph_2.1.4             </span></span>
-<span><span class="co">#&gt;  [29] lifecycle_1.0.4           pkgconfig_2.0.3          </span></span>
-<span><span class="co">#&gt;  [31] rsvd_1.0.5                Matrix_1.7-2             </span></span>
-<span><span class="co">#&gt;  [33] R6_2.6.1                  fastmap_1.2.0            </span></span>
-<span><span class="co">#&gt;  [35] GenomeInfoDbData_1.2.13   digest_0.6.37            </span></span>
-<span><span class="co">#&gt;  [37] colorspace_2.1-1          AnnotationDbi_1.68.0     </span></span>
-<span><span class="co">#&gt;  [39] dqrng_0.4.1               irlba_2.3.5.1            </span></span>
-<span><span class="co">#&gt;  [41] textshaping_1.0.0         RSQLite_2.3.9            </span></span>
-<span><span class="co">#&gt;  [43] beachmat_2.22.0           httr_1.4.7               </span></span>
-<span><span class="co">#&gt;  [45] abind_1.4-8               compiler_4.4.3           </span></span>
-<span><span class="co">#&gt;  [47] bit64_4.6.0-1             withr_3.0.2              </span></span>
-<span><span class="co">#&gt;  [49] BiocParallel_1.40.0       viridis_0.6.5            </span></span>
-<span><span class="co">#&gt;  [51] DBI_1.2.3                 DelayedArray_0.32.0      </span></span>
-<span><span class="co">#&gt;  [53] rjson_0.2.23              bluster_1.16.0           </span></span>
-<span><span class="co">#&gt;  [55] tools_4.4.3               vipor_0.4.7              </span></span>
-<span><span class="co">#&gt;  [57] beeswarm_0.4.0            glue_1.8.0               </span></span>
-<span><span class="co">#&gt;  [59] restfulr_0.0.15           batchelor_1.22.0         </span></span>
-<span><span class="co">#&gt;  [61] grid_4.4.3                cluster_2.1.8            </span></span>
-<span><span class="co">#&gt;  [63] generics_0.1.3            megadepth_1.16.0         </span></span>
+<span><span class="co">#&gt;   [1] RColorBrewer_1.1-3        jsonlite_2.0.0           </span></span>
+<span><span class="co">#&gt;   [3] shape_1.4.6.1             magrittr_2.0.3           </span></span>
+<span><span class="co">#&gt;   [5] ggbeeswarm_0.7.2          GenomicFeatures_1.60.0   </span></span>
+<span><span class="co">#&gt;   [7] farver_2.1.2              rmarkdown_2.29           </span></span>
+<span><span class="co">#&gt;   [9] GlobalOptions_0.1.2       fs_1.6.6                 </span></span>
+<span><span class="co">#&gt;  [11] BiocIO_1.18.0             ragg_1.4.0               </span></span>
+<span><span class="co">#&gt;  [13] vctrs_0.6.5               memoise_2.0.1            </span></span>
+<span><span class="co">#&gt;  [15] Rsamtools_2.24.0          DelayedMatrixStats_1.30.0</span></span>
+<span><span class="co">#&gt;  [17] RCurl_1.98-1.17           htmltools_0.5.8.1        </span></span>
+<span><span class="co">#&gt;  [19] S4Arrays_1.8.1            curl_6.2.3               </span></span>
+<span><span class="co">#&gt;  [21] BiocNeighbors_2.2.0       SparseArray_1.8.0        </span></span>
+<span><span class="co">#&gt;  [23] sass_0.4.10               bslib_0.9.0              </span></span>
+<span><span class="co">#&gt;  [25] desc_1.4.3                cachem_1.1.0             </span></span>
+<span><span class="co">#&gt;  [27] ResidualMatrix_1.18.0     GenomicAlignments_1.44.0 </span></span>
+<span><span class="co">#&gt;  [29] igraph_2.1.4              lifecycle_1.0.4          </span></span>
+<span><span class="co">#&gt;  [31] pkgconfig_2.0.3           rsvd_1.0.5               </span></span>
+<span><span class="co">#&gt;  [33] Matrix_1.7-3              R6_2.6.1                 </span></span>
+<span><span class="co">#&gt;  [35] fastmap_1.2.0             GenomeInfoDbData_1.2.14  </span></span>
+<span><span class="co">#&gt;  [37] digest_0.6.37             colorspace_2.1-1         </span></span>
+<span><span class="co">#&gt;  [39] AnnotationDbi_1.70.0      dqrng_0.4.1              </span></span>
+<span><span class="co">#&gt;  [41] irlba_2.3.5.1             textshaping_1.0.1        </span></span>
+<span><span class="co">#&gt;  [43] RSQLite_2.4.0             beachmat_2.24.0          </span></span>
+<span><span class="co">#&gt;  [45] httr_1.4.7                abind_1.4-8              </span></span>
+<span><span class="co">#&gt;  [47] compiler_4.5.0            bit64_4.6.0-1            </span></span>
+<span><span class="co">#&gt;  [49] withr_3.0.2               BiocParallel_1.42.1      </span></span>
+<span><span class="co">#&gt;  [51] viridis_0.6.5             DBI_1.2.3                </span></span>
+<span><span class="co">#&gt;  [53] DelayedArray_0.34.1       rjson_0.2.23             </span></span>
+<span><span class="co">#&gt;  [55] bluster_1.18.0            tools_4.5.0              </span></span>
+<span><span class="co">#&gt;  [57] vipor_0.4.7               beeswarm_0.4.0           </span></span>
+<span><span class="co">#&gt;  [59] glue_1.8.0                restfulr_0.0.15          </span></span>
+<span><span class="co">#&gt;  [61] batchelor_1.24.0          grid_4.5.0               </span></span>
+<span><span class="co">#&gt;  [63] cluster_2.1.8.1           megadepth_1.18.0         </span></span>
 <span><span class="co">#&gt;  [65] gtable_0.3.6              tzdb_0.5.0               </span></span>
-<span><span class="co">#&gt;  [67] ensembldb_2.30.0          hms_1.1.3                </span></span>
-<span><span class="co">#&gt;  [69] metapod_1.14.0            BiocSingular_1.22.0      </span></span>
-<span><span class="co">#&gt;  [71] ScaledMatrix_1.14.0       XVector_0.46.0           </span></span>
+<span><span class="co">#&gt;  [67] ensembldb_2.32.0          hms_1.1.3                </span></span>
+<span><span class="co">#&gt;  [69] metapod_1.16.0            BiocSingular_1.24.0      </span></span>
+<span><span class="co">#&gt;  [71] ScaledMatrix_1.16.0       XVector_0.48.0           </span></span>
 <span><span class="co">#&gt;  [73] stringr_1.5.1             ggrepel_0.9.6            </span></span>
-<span><span class="co">#&gt;  [75] pillar_1.10.1             limma_3.62.2             </span></span>
+<span><span class="co">#&gt;  [75] pillar_1.10.2             limma_3.64.1             </span></span>
 <span><span class="co">#&gt;  [77] circlize_0.4.16           dplyr_1.1.4              </span></span>
-<span><span class="co">#&gt;  [79] lattice_0.22-6            rtracklayer_1.66.0       </span></span>
+<span><span class="co">#&gt;  [79] lattice_0.22-6            rtracklayer_1.68.0       </span></span>
 <span><span class="co">#&gt;  [81] bit_4.6.0                 tidyselect_1.2.1         </span></span>
-<span><span class="co">#&gt;  [83] locfit_1.5-9.12           Biostrings_2.74.1        </span></span>
+<span><span class="co">#&gt;  [83] locfit_1.5-9.12           Biostrings_2.76.0        </span></span>
 <span><span class="co">#&gt;  [85] knitr_1.50                gridExtra_2.3            </span></span>
-<span><span class="co">#&gt;  [87] bookdown_0.42             ProtGenerics_1.38.0      </span></span>
-<span><span class="co">#&gt;  [89] edgeR_4.4.2               cmdfun_1.0.2             </span></span>
-<span><span class="co">#&gt;  [91] xfun_0.51                 statmod_1.5.0            </span></span>
-<span><span class="co">#&gt;  [93] stringi_1.8.7             UCSC.utils_1.2.0         </span></span>
+<span><span class="co">#&gt;  [87] bookdown_0.43             ProtGenerics_1.40.0      </span></span>
+<span><span class="co">#&gt;  [89] edgeR_4.6.2               cmdfun_1.0.2             </span></span>
+<span><span class="co">#&gt;  [91] xfun_0.52                 statmod_1.5.0            </span></span>
+<span><span class="co">#&gt;  [93] stringi_1.8.7             UCSC.utils_1.4.0         </span></span>
 <span><span class="co">#&gt;  [95] EnsDb.Hsapiens.v86_2.99.0 lazyeval_0.2.2           </span></span>
 <span><span class="co">#&gt;  [97] yaml_2.3.10               evaluate_1.0.3           </span></span>
 <span><span class="co">#&gt;  [99] codetools_0.2-20          tibble_3.2.1             </span></span>
-<span><span class="co">#&gt; [101] BiocManager_1.30.25       cli_3.6.4                </span></span>
-<span><span class="co">#&gt; [103] systemfonts_1.2.1         munsell_0.5.1            </span></span>
-<span><span class="co">#&gt; [105] jquerylib_0.1.4           Rcpp_1.0.14              </span></span>
-<span><span class="co">#&gt; [107] png_0.1-8                 XML_3.99-0.18            </span></span>
-<span><span class="co">#&gt; [109] parallel_4.4.3            pkgdown_2.1.1            </span></span>
-<span><span class="co">#&gt; [111] readr_2.1.5               blob_1.2.4               </span></span>
-<span><span class="co">#&gt; [113] scran_1.34.0              AnnotationFilter_1.30.0  </span></span>
-<span><span class="co">#&gt; [115] sparseMatrixStats_1.18.0  bitops_1.0-9             </span></span>
-<span><span class="co">#&gt; [117] viridisLite_0.4.2         scales_1.3.0             </span></span>
-<span><span class="co">#&gt; [119] purrr_1.0.4               crayon_1.5.3             </span></span>
-<span><span class="co">#&gt; [121] rlang_1.1.5               KEGGREST_1.46.0</span></span></code></pre>
+<span><span class="co">#&gt; [101] BiocManager_1.30.25       cli_3.6.5                </span></span>
+<span><span class="co">#&gt; [103] systemfonts_1.2.3         jquerylib_0.1.4          </span></span>
+<span><span class="co">#&gt; [105] Rcpp_1.0.14               png_0.1-8                </span></span>
+<span><span class="co">#&gt; [107] XML_3.99-0.18             parallel_4.5.0           </span></span>
+<span><span class="co">#&gt; [109] pkgdown_2.1.3             readr_2.1.5              </span></span>
+<span><span class="co">#&gt; [111] blob_1.2.4                scran_1.36.0             </span></span>
+<span><span class="co">#&gt; [113] AnnotationFilter_1.32.0   sparseMatrixStats_1.20.0 </span></span>
+<span><span class="co">#&gt; [115] bitops_1.0-9              viridisLite_0.4.2        </span></span>
+<span><span class="co">#&gt; [117] scales_1.4.0              purrr_1.0.4              </span></span>
+<span><span class="co">#&gt; [119] crayon_1.5.3              rlang_1.1.6              </span></span>
+<span><span class="co">#&gt; [121] KEGGREST_1.48.0</span></span></code></pre>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
@@ -242,7 +242,7 @@ reduction of Raw Sequencing Data.</li>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>

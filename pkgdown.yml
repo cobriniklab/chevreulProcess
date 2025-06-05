@@ -1,9 +1,9 @@
 pandoc: 3.1.11
-pkgdown: 2.1.1
+pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
   chevreulProcess: chevreulProcess.html
-last_built: 2025-04-01T21:19Z
+last_built: 2025-06-05T01:59Z
 urls:
   reference: https://cobriniklab.github.io/chevreulProcess/reference
   article: https://cobriniklab.github.io/chevreulProcess/articles
