@@ -136,10 +136,17 @@ find_all_markers <- function(object,
             object <- sce_cluster(object, 
                                      resolution = seq(0.2, 1, by = 0.2))
         }
-        clusters <- get_colData(object)[, cluster_index]
-        cluster_levels <- map_int(clusters, ~ length(unique(.x)))
-        cluster_levels <- cluster_levels[cluster_levels > 1]
-        clusters <- select(clusters, one_of(names(cluster_levels)))
+        # Get cluster data from object
+        clusters <- get_colData(object)[, cluster_index, drop = FALSE]
+        
+        # Find clusters with more than one level
+        cluster_levels <- map_int(clusters, ~length(unique(.x)))
+        valid_clusters <- names(cluster_levels[cluster_levels > 1])
+        
+        # Select only the valid clusters
+        clusters <- clusters[, valid_clusters, drop = FALSE]
+        
+        # Set grouping variable
         group_by <- names(clusters)
     }
     new_markers <- map(group_by, ~ stash_marker_features(
